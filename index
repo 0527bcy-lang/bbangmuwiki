@@ -34,7 +34,7 @@
             margin-bottom: 10px;
         }
 
-        /* 분류 박스 */
+        /* 분류 박스 */ 
         .wiki-category-box {
             border: 1px solid #ccc;
             background: #fdfdfd;
