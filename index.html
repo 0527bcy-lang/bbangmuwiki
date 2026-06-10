@@ -76,7 +76,6 @@
             cursor: pointer;
             user-select: none;
         }
-        /* 처음에는 무조건 닫힌 상태 */
         .frame-body-content {
             display: none;
         }
@@ -347,10 +346,10 @@
             <tr><td class="attr-name">성별</td><td>여성</td></tr>
             <tr><td class="attr-name">체류 콜로니</td><td>도쿄 제 2 콜로니</td></tr>
             <tr><td class="attr-name">취미</td><td>종이 접기</td></tr>
-            <tr><td class="attr-name">술식</td><td>없음</td></tr>
-            <tr><td class="attr-name">나이</td><td>20세<span class="footnote" onclick="showPopup(event, '향년')">[1]</span></td></tr>
+            <tr><td class="attr-name">술식</td><td>없음<span class="footnote" onclick="showPopup(event, '비주술사')">[1]</span></td></tr>
+            <tr><td class="attr-name">나이</td><td>20세<span class="footnote" onclick="showPopup(event, '향년')">[2]</span></td></tr>
             <tr><td class="attr-name">분류</td><td>인간</td></tr>
-            <tr><td class="attr-name">출생</td><td>1998. 05. 31<span class="footnote" onclick="showPopup(event, '이와테 현')">[2]</span></td></tr>
+            <tr><td class="attr-name">출생</td><td>1998. 05. 31<span class="footnote" onclick="showPopup(event, '이와테 현')">[3]</span></td></tr>
             <tr><td class="attr-name">신장</td><td>156cm</td></tr>
         </table>
     </div>
@@ -382,7 +381,7 @@
         <br>
         <p>한부모 가정에서 장녀로 태어나 편찮으신 아버지와 한참 어린 동생들, 넉넉치 못한 집안 사정으로 갖가지 일을 전전해오며 소녀 가장으로서 가족을 부양해왔다.</p>
         <br>
-        <p>성인이 되자 도쿄에 홀로 독립했지만 우연찮게 사멸회유가 시작되어 비술사 플레이어로 참여하게 되었다.</p>
+        <p>성인이 되자 도쿄에 홀로 독립했지만 우연찮게 사멸회유가 시작되어 비술사 플레이어로 참여하게 되었다.<span class="footnote" onclick="showPopup(event, '켄자쿠의 콜로니 바깥으로 나갈 수 있는 기회를 거절했다.')">[4]</span></p>
         <br>
         <p>이미지 컬러는 <span class="coral-tag">산호색</span>.</p>
 
@@ -392,7 +391,7 @@
         <div class="folding-box">
             <div class="folding-header" onclick="toggleFolding('fold-appearance')">[ 펼치기 · 접기 ]</div>
             <div class="folding-content open-active" id="fold-appearance">
-                <p>수수한 차림으로 다니곤 한다. 붉은 머리에 눈물점과 턱 및 점, 주근깨가 특징. 눈매가 둥글며 검은 스웨터에 흰색 롱 스커트와 머플러를 두르고 앞머리에 삔을 꽂고 있다. 체구는 작은 편이며 꽁꽁 싸매고 다니는 편.</p>
+                <p>수수한 차림으로 다니곤 한다. 붉은 머리에 눈물점과 턱 및 점, 주근깨가 특징. 눈매가 둥글며 검은 스웨터에 흰색 롱 스커트와 머플러를 두르고 앞머리에 삔을 꽂고 있다. 체구는 작은 편이며 꽁꽁 싸매고 다니는 편.<span class="footnote" onclick="showPopup(event, '커미션주- crepe sss_')">[5]</span></p>
             </div>
         </div>
         
@@ -401,7 +400,7 @@
             <div class="folding-header" onclick="toggleFolding('fold-personality')">[ 펼치기 · 접기 ]</div>
             <div class="folding-content open-active" id="fold-personality">
                 <p>내성적이고, 매사에 소극적이며 잘 나서질 않는다. 하지만 가족이나 생계에 관련한 일이라면 본인이 제일 먼저 나서는 편.</p>
-                <p>성격 탓 인지 마음의 응어리를 속으로 삭히고 겉으로 티 내는 일이 없다. 소녀 가장으로서 군말 없이 생계를 부양하던 습관 때문인 지 타인이 시키는 일에도 대부분 거절 없이 수용하고 그대로 따른다.</p>
+                <p>그런 성격 탓 인지 마음의 응어리를 속으로 삭히며 겉으로 잘 티 내는 일이 없다. 소녀 가장으로서 군말 없이 생계를 부양하던 습관 때문인지 타인이 시키는 일에도 대부분 거절 없이 수용하고 그대로 따른다.<span class="footnote" onclick="showPopup(event, '사기 잘 당할 듯 싶다.')">[6]</span></p>
                 <p>덤벙거리고 표정으로 속 마음이 훤히 보인다. 거짓말도 못 하는 편.</p>
             </div>
         </div>
@@ -413,9 +412,9 @@
             <div class="folding-header" onclick="toggleFolding('fold-history-1')">[스포일러 주의] 펼치기 · 접기</div>
             <div class="folding-content" id="fold-history-1">
                 <p>사멸회유 초반, 도쿄 제 2 콜로니에 체류하는 영자로 켄자쿠의 게임 참여를 포기할 수 있는 기회를 얻었음에도 가족 생각에 그저 악몽일 것이라 생각했고 결국 콜로니에 남겠다고 말한 후 그대로 플레이어가 되었다.</p>
-                <p>스쿠나를 찾으며 포인트를 모으던 카시모와 만나게 되었고 임기응변으로 스쿠나를 안다며 거짓말을 쳐 그에게서 살아 남았다. 카시모가 스쿠나를 찾기 위한 열쇠와 같은 존재로 치부하며 데리고 다녔지만 그 마저도 머지않아 들키게 된다.</p>
-                <p>다행스럽게도 그의 변덕으로 인해 곁에 남기만 하고 죽임을 당하진 않았다.</p>
-                <p>사멸회유 후반, 카시모가 신주쿠 결전을 위해 떠나며 사멸회유가 끝나는 틈을 타 일상으로 돌아가라 말 하곤 요코는 콜로니 안에, 카시모는 신주쿠로 떠나게 된다.</p>
+                <p>스쿠나를 찾으며 포인트를 모으던 카시모와 만나게 되었고 임기응변으로 스쿠나를 안다며 거짓말을 쳐 그에게서 살아 남았다.<span class="footnote" onclick="showPopup(event, '그가 스쿠나를 알면 살려주겠다고 한 질문을 덥석 물은 셈, 스쿠나가 어떤 존재인지 누구인지 조차 알지 못한다')">[7]</span> 카시모가 스쿠나를 찾기 위한 열쇠와 같은 존재로 치부하며 데리고 다녔지만 그 마저도 머지않아 들키게 된다.</p>
+                <p>다행스럽게도 그의 변덕으로 인해 곁에 남기만 하고 죽임을 당하진 않았다.<span class="footnote" onclick="showPopup(event, '정확히는 짐짝 처럼 끌려다녔다.')">[8]</span></p>
+                <p>사멸회유 후반, 카시모가 신주쿠 결전을 위해 떠나며 사멸회유가 끝나는 틈을 타 일상으로 돌아가라 말 하곤<span class="footnote" onclick="showPopup(event, '말이 그렇지 거의 내팽기듯 버리고 갔다.')">[9]</span> 요코는 콜로니 안에, 카시모는 신주쿠로 떠나게 된다.</p>
                 <br>
             </div>
         </div>
@@ -424,7 +423,7 @@
         <div class="folding-box">
             <div class="folding-header" onclick="toggleFolding('fold-history-2')">[스포일러 주의] 펼치기 · 접기</div>
             <div class="folding-content" id="fold-history-2">
-                <p>남은 플레이어들을 사냥하던 켄자쿠와 마주치고 긴 파이프에 관통상을 입으며 과다 출혈로 사망한다.<span class="footnote" onclick="showPopup(event, '향년 20세')">[3]</span></p>
+                <p>남은 플레이어들을 사냥하던 켄자쿠와 마주치고 긴 파이프에 관통상을 입으며 과다 출혈로 사망한다.</p>
             </div>
         </div>
 
@@ -432,17 +431,26 @@
         <ul class="etc-items">
             <li>사멸회유에 본인도 모르게 참가하게 되었다. 정신 차려보니 이미 한참 진행 중이던 콜로니에 플레이어로 남아 있었고 아무것도 모른 채 일을 하러 외출했을 때 카시모와 마주치게 된 것.</li>
             <li>머리카락 색은 원래 그런 것이 아니라 도쿄에서 새 출발을 하는 기념으로 물들인 것이다. 그녀 치고는 과감한 도전인 셈.</li>
-            <li>남동생 둘과 편찮으신 아버지가 계신다. 어머니는 병으로 돌아가신지 오래. 아버지가 아프시고 동생들은 어리니 장녀인 요코 본인이 집안을 먹여 살려야 할 수 밖에 없었다.</li>
+            <li>남동생 둘과 편찮으신 아버지가 계신다. 어머니는 병으로 돌아가신지 오래. 아버지가 아프시고<span class="footnote" onclick="showPopup(event, '산업 재해로 장애를 가지게 되었다.')">[10]</span> 동생들은 어리니<span class="footnote" onclick="showPopup(event, '셋째는 중학교 3학년, 둘째는 고등학교 1학년이다.')">[11]</span> 장녀인 요코 본인이 집안을 먹여 살려야 할 수 밖에 없었다.</li>
             <li>코가네는 눈썹이 짙고 주근깨에 하트모양 꼬리가 특징.</li>
-            <li>가장 잘 접는 것은 학이다. 종이 학을 앉은 자리에서 몇 시간동안 질리지도 않고 계속 접을 수 있을 정도로</li>
+            <li>가장 잘 접는 것은 학이다. 종이 학을 앉은 자리에서 몇 시간동안 질리지도 않고 계속 접을 수 있을 정도로<span class="footnote" onclick="showPopup(event, '어머니의 병이 낫기를 기원하면서 학을 접던 게 자연스레 취미가 되었다.')">[12]</span></li>
         </ul>
 
         <h2 id="sec-5">5. 둘러보기</h2>
         <div class="loop-box">
             <ul class="loop-list">
-                <li><span class="loop-num">[1]</span> 향년</li>
-                <li><span class="loop-num">[2]</span> 이와테 현</li>
-                <li><span class="loop-num">[3]</span> 향년 20세</li>
+                <li><span class="loop-num">[1]</span> 비주술사</li>
+                <li><span class="loop-num">[2]</span> 향년</li>
+                <li><span class="loop-num">[3]</span> 이와테 현</li>
+                <li><span class="loop-num">[4]</span> 켄자쿠의 콜로니 바깥으로 나갈 수 있는 기회를 거절했다.</li>
+                <li><span class="loop-num">[5]</span> 커미션주- crepe sss_</li>
+                <li><span class="loop-num">[6]</span> 사기 잘 당할 듯 싶다.</li>
+                <li><span class="loop-num">[7]</span> 그가 스쿠나를 알면 살려주겠다고 한 질문을 덥석 물은 셈, 스쿠나가 어떤 존재인지 누구인지 조차 알지 못한다</li>
+                <li><span class="loop-num">[8]</span> 정확히는 짐짝 처럼 끌려다녔다.</li>
+                <li><span class="loop-num">[9]</span> 말이 그렇지 거의 내팽기듯 버리고 갔다.</li>
+                <li><span class="loop-num">[10]</span> 산업 재해로 장애를 가지게 되었다.</li>
+                <li><span class="loop-num">[11]</span> 셋째는 중학교 3학년, 둘째는 고등학교 1학년이다.</li>
+                <li><span class="loop-num">[12]</span> 어머니의 병이 낫기를 기원하면서 학을 접던 게 자연스레 취미가 되었다.</li>
             </ul>
         </div>
     </div>
