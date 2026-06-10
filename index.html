@@ -76,8 +76,9 @@
             cursor: pointer;
             user-select: none;
         }
+        /* [수정] 처음부터 닫힌 상태로 만들기 위해 display: none; 설정 */
         .frame-body-content {
-            display: block;
+            display: none;
         }
         .frame-colony-title {
             background: #1a1a1a;
@@ -214,52 +215,4 @@
             padding: 6px 12px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 13px;
-            user-select: none;
-        }
-        .folding-content {
-            padding: 12px;
-            display: none; 
-            border-top: 1px solid #ccc;
-            background: #ffffff;
-        }
-        .folding-content.open-active {
-            display: block;
-        }
-
-        /* 본문 타이틀 텍스트 디자인 */
-        .wiki-text h2 { font-size: 24px; border-bottom: 1px solid #ccc; padding-bottom: 3px; margin-top: 35px; margin-bottom: 12px; }
-        .wiki-text h3 { font-size: 18px; margin-top: 20px; margin-bottom: 8px; }
-        .wiki-text p { margin-bottom: 14px; text-align: justify; font-size: 14.5px; }
-        
-        .etc-items { padding-left: 15px; margin-bottom: 15px; }
-        .etc-items li { margin-bottom: 8px; font-size: 14.5px; }
-
-        /* 각주 기능 */
-        .footnote { color: #0275d8; font-size: 11px; vertical-align: super; cursor: pointer; font-weight: bold; padding: 0 1px; }
-        .footnote-popup { display: none; position: absolute; background: #373a3c; color: #fff; padding: 6px 10px; border-radius: 4px; font-size: 12px; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
-
-        /* [수정] 대사 칸 테두리와 같은 색상으로 맞춘 강조 태그 스타일 */
-        .coral-tag {
-            background-color: #fbeee9; /* 대사칸 배경처럼 연한 느낌 */
-            color: #CD5C5C;           /* 대사칸 테두리와 같은 색상 */
-            padding: 2px 6px; 
-            border-radius: 4px; 
-            font-weight: bold;
-            display: inline-block;
-        }
-    </style>
-</head>
-<body>
-
-<div class="wiki-container">
-    <h1 class="wiki-title">이시이 요코</h1>
-
-    <div class="wiki-category-box">
-        <span>분류</span>: <a href="#">주술회전/등장인물</a>
-    </div>
-
-    <div class="wiki-frame">
-        <div class="frame-header">
-            <img src="https://mblogthumb-phinf.pstatic.net/MjAyNjA2MTBfNjYg/MDAxNzgxMDE5NzM3MjU5.jK2PLI14P5kAn4O7eVAR-nz4u-y2uDvZlXxQhICycvkg.r7qXKMYuQMXhF7JPbf5wm5PyhQYNFUGUxS7MpAwJ5rcg.JPEG/IMG%EF%BC%BF6226.jpg?type=w800" alt="로고">
-            <div style="color: #ffffff; font-size: 13px; font-weight: bold; margin-top: 2
+            font-size:
