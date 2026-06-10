@@ -76,7 +76,7 @@
             cursor: pointer;
             user-select: none;
         }
-        /* [수정] 처음부터 닫힌 상태로 만들기 위해 display: none; 설정 */
+        /* 처음에는 무조건 닫힌 상태 */
         .frame-body-content {
             display: none;
         }
@@ -215,4 +215,278 @@
             padding: 6px 12px;
             cursor: pointer;
             font-weight: bold;
-            font-size:
+            font-size: 13px;
+            user-select: none;
+        }
+        .folding-content {
+            padding: 12px;
+            display: none; 
+            border-top: 1px solid #ccc;
+            background: #ffffff;
+        }
+        .folding-content.open-active {
+            display: block;
+        }
+
+        /* 본문 타이틀 텍스트 디자인 */
+        .wiki-text h2 { font-size: 24px; border-bottom: 1px solid #ccc; padding-bottom: 3px; margin-top: 35px; margin-bottom: 12px; }
+        .wiki-text h3 { font-size: 18px; margin-top: 20px; margin-bottom: 8px; }
+        .wiki-text p { margin-bottom: 14px; text-align: justify; font-size: 14.5px; }
+        
+        .etc-items { padding-left: 15px; margin-bottom: 15px; }
+        .etc-items li { margin-bottom: 8px; font-size: 14.5px; }
+
+        /* 각주 기능 */
+        .footnote { color: #0275d8; font-size: 11px; vertical-align: super; cursor: pointer; font-weight: bold; padding: 0 1px; }
+        .footnote-popup { display: none; position: absolute; background: #373a3c; color: #fff; padding: 6px 10px; border-radius: 4px; font-size: 12px; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+
+        /* 강조 태그 스타일 */
+        .coral-tag {
+            background-color: #fbeee9; 
+            color: #CD5C5C;           
+            padding: 2px 6px; 
+            border-radius: 4px; 
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* 둘러보기 문단 스타일 */
+        .loop-box {
+            margin-top: 15px;
+            border-top: 2px solid #ccc;
+            padding-top: 15px;
+        }
+        .loop-list {
+            list-style: none;
+            padding-left: 5px;
+        }
+        .loop-list li {
+            font-size: 13.5px;
+            margin-bottom: 6px;
+            color: #555;
+        }
+        .loop-num {
+            color: #0275d8;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wiki-container">
+    <h1 class="wiki-title">이시이 요코</h1>
+
+    <div class="wiki-category-box">
+        <span>분류</span>: <a href="#">주술회전/등장인물</a>
+    </div>
+
+    <div class="wiki-frame">
+        <div class="frame-header">
+            <img src="https://mblogthumb-phinf.pstatic.net/MjAyNjA2MTBfNjYg/MDAxNzgxMDE5NzM3MjU5.jK2PLI14P5kAn4O7eVAR-nz4u-y2uDvZlXxQhICycvkg.r7qXKMYuQMXhF7JPbf5wm5PyhQYNFUGUxS7MpAwJ5rcg.JPEG/IMG%EF%BC%BF6226.jpg?type=w800" alt="로고">
+            <div style="color: #ffffff; font-size: 13px; font-weight: bold; margin-top: 2px;">사멸회유 참가자</div>
+        </div>
+        <div class="frame-toggle" onclick="toggleFrameBody()">[ 펼치기 · 접기 ]</div>
+        
+        <div class="frame-body-content" id="frame-body">
+            <div class="frame-colony-title">도쿄 제1콜로니</div>
+            <table class="frame-table">
+                <tr>
+                    <th>플레이어</th>
+                    <td><span class="txt-green">히구루마 히로미</span> · <span class="txt-blue">레지 스타</span> · <span class="txt-blue">하제노키 이오리</span> · <span class="txt-blue">하리 치즈루</span> · <span class="txt-green">타카바 후미히코</span> · <span class="txt-green">레미</span> · <span class="txt-blue">하뉴</span> · <span class="txt-blue">하바</span> · <span class="txt-green">아마이 린</span> · <span class="txt-blue">쿠루스 하나</span></td>
+                </tr>
+                <tr><th>신규 플레이어</th><td><span class="txt-red">이타도리 유지</span> · <span class="txt-red">후시구로 메구미</span> · <span class="txt-red">후시구로 츠미키(???)</span></td></tr>
+            </table>
+
+            <div class="frame-colony-title">도쿄 제2콜로니</div>
+            <table class="frame-table">
+                <tr>
+                    <th>플레이어</th>
+                    <td><span class="txt-blue">카시모 하지메</span> · <span class="txt-green">샤를 베르나르</span> · <span class="txt-neutral">이시이 요코</span></td>
+                </tr>
+                <tr>
+                    <th>신규 플레이어</th>
+                    <td><span class="txt-red">하카리 킨지</span> · <span class="txt-red">판다</span> · <span class="txt-red">니시미야 모모</span></td>
+                </tr>
+            </table>
+
+            <div class="frame-colony-title">센다이 콜로니</div>
+            <table class="frame-table">
+                <tr><th>플레이어</th><td><span class="txt-blue">도르브 라크다와라</span> · <span class="txt-blue">이시고오리 류</span> · <span class="txt-blue">우로 타카코</span> · <span class="txt-purple">쿠로우루시</span></td></tr>
+                <tr><th>신규 플레이어</th><td><span class="txt-red">옷코츠 유타</span> · <span class="txt-red">미와 카스미</span></td></tr>
+            </table>
+
+            <div class="frame-colony-title">사쿠라지마 콜로니</div>
+            <table class="frame-table">
+                <tr><th>플레이어</th><td><span class="txt-blue">다이도 하가네</span> · <span class="txt-blue">미요 로쿠주시</span></td></tr>
+                <tr><th>신규 플레이어</th><td><span class="txt-red">카모 노리토시</span> · <span class="txt-neutral">스포일러</span></td></tr>
+                <tr><th>기타</th><td><span class="txt-red">젠인 마키</span></td></tr>
+            </table>
+            
+            <div class="frame-footer">
+                <span class="txt-blue">청색: 과거의 주술사</span> | <span class="txt-green">녹색: 각성 플레이어</span> | <span class="txt-red">적색: 고전 측 플레이어</span><br>
+                <span class="txt-purple">자색: 주령 플레이어</span> | <span class="txt-neutral">무채색: 분류 불명</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="infobox-frame">
+        <table class="infobox">
+            <tr>
+                <th colspan="2" class="title-cell">
+                    이시이 요코
+                    <span class="sub-lang">石井 陽子 / いしい ようこ</span>
+                </th>
+            </tr>
+            <tr>
+                <td colspan="2" class="image-cell">
+                    <img src="https://mblogthumb-phinf.pstatic.net/MjAyNjA2MTBfNTUg/MDAxNzgxMDE4ODI5ODc3.T9e4HKj-ll5f82lh68fofYDEviRSaX0FLMsxh3EUFZ8g.ceiEO69BYJ5PtOF1UZq2gwvqTb-jAIA3j8xi4Pxrk7wg.JPEG/%EB%AC%B4%EC%A0%9C165%EF%BC%BF20260426111307.jpg?type=w800" alt="프로필">
+                </td>
+            </tr>
+            <tr><td class="attr-name">본명</td><td>이시이 요코</td></tr>
+            <tr><td class="attr-name">성별</td><td>여성</td></tr>
+            <tr><td class="attr-name">체류 콜로니</td><td>도쿄 제 2 콜로니</td></tr>
+            <tr><td class="attr-name">취미</td><td>종이 접기</td></tr>
+            <tr><td class="attr-name">술식</td><td>없음</td></tr>
+            <tr><td class="attr-name">나이</td><td>20세<span class="footnote" onclick="showPopup(event, '향년')">[1]</span></td></tr>
+            <tr><td class="attr-name">분류</td><td>인간</td></tr>
+            <tr><td class="attr-name">출생</td><td>1998. 05. 31<span class="footnote" onclick="showPopup(event, '이와테 현')">[2]</span></td></tr>
+            <tr><td class="attr-name">신장</td><td>156cm</td></tr>
+        </table>
+    </div>
+
+    <div class="toc-container">
+        <div class="toc-header">목차</div>
+        <ul>
+            <li><a href="#sec-1"><span class="toc-num">1.</span>개요</a></li>
+            <li><a href="#sec-2"><span class="toc-num">2.</span>특징</a></li>
+            <li class="sub-level"><a href="#sec-2-1"><span class="toc-num">2.1.</span>외모</a></li>
+            <li class="sub-level"><a href="#sec-2-2"><span class="toc-num">2.2.</span>성격</a></li>
+            <li><a href="#sec-3"><span class="toc-num">3.</span>작중 행적</a></li>
+            <li class="sub-level"><a href="#sec-3-1"><span class="toc-num">3.1.</span>사멸회유</a></li>
+            <li class="sub-level"><a href="#sec-3-2"><span class="toc-num">3.2.</span>인외마경 신주쿠 결전</a></li>
+            <li><a href="#sec-4"><span class="toc-num">4.</span>기타</a></li>
+            <li><a href="#sec-5"><span class="toc-num">5.</span>둘러보기</a></li>
+        </ul>
+    </div>
+
+    <div class="wiki-text">
+        <h2 id="sec-1">1. 개요</h2>
+        
+        <div class="quote-box">
+            <div class="quote-line">ワ、ワタシ 宿儺を知っています...！</div>
+            <div class="quote-line" style="margin-top: 5px; font-weight: normal; color: #555;">제, 제가 스쿠나를 알고 있어요…!</div>
+        </div>
+
+        <p>만화 《주술회전》의 등장인물. 사멸회유의 영자(플레이어)이다.</p>
+        <br>
+        <p>한부모 가정에서 장녀로 태어나 편찮으신 아버지와 한참 어린 동생들, 넉넉치 못한 집안 사정으로 갖가지 일을 전전해오며 소녀 가장으로서 가족을 부양해왔다.</p>
+        <br>
+        <p>성인이 되자 도쿄에 홀로 독립했지만 우연찮게 사멸회유가 시작되어 비술사 플레이어로 참여하게 되었다.</p>
+        <br>
+        <p>이미지 컬러는 <span class="coral-tag">산호색</span>.</p>
+
+        <h2 id="sec-2">2. 특징</h2>
+        
+        <h3 id="sec-2-1">2.1. 외모</h3>
+        <div class="folding-box">
+            <div class="folding-header" onclick="toggleFolding('fold-appearance')">[ 펼치기 · 접기 ]</div>
+            <div class="folding-content open-active" id="fold-appearance">
+                <p>수수한 차림으로 다니곤 한다. 붉은 머리에 눈물점과 턱 및 점, 주근깨가 특징. 눈매가 둥글며 검은 스웨터에 흰색 롱 스커트와 머플러를 두르고 앞머리에 삔을 꽂고 있다. 체구는 작은 편이며 꽁꽁 싸매고 다니는 편.</p>
+            </div>
+        </div>
+        
+        <h3 id="sec-2-2">2.2. 성격</h3>
+        <div class="folding-box">
+            <div class="folding-header" onclick="toggleFolding('fold-personality')">[ 펼치기 · 접기 ]</div>
+            <div class="folding-content open-active" id="fold-personality">
+                <p>내성적이고, 매사에 소극적이며 잘 나서질 않는다. 하지만 가족이나 생계에 관련한 일이라면 본인이 제일 먼저 나서는 편.</p>
+                <p>성격 탓 인지 마음의 응어리를 속으로 삭히고 겉으로 티 내는 일이 없다. 소녀 가장으로서 군말 없이 생계를 부양하던 습관 때문인 지 타인이 시키는 일에도 대부분 거절 없이 수용하고 그대로 따른다.</p>
+                <p>덤벙거리고 표정으로 속 마음이 훤히 보인다. 거짓말도 못 하는 편.</p>
+            </div>
+        </div>
+
+        <h2 id="sec-3">3. 작중 행적</h2>
+        
+        <h3 id="sec-3-1">3.1. 사멸회유</h3>
+        <div class="folding-box">
+            <div class="folding-header" onclick="toggleFolding('fold-history-1')">[스포일러 주의] 펼치기 · 접기</div>
+            <div class="folding-content" id="fold-history-1">
+                <p>사멸회유 초반, 도쿄 제 2 콜로니에 체류하는 영자로 켄자쿠의 게임 참여를 포기할 수 있는 기회를 얻었음에도 가족 생각에 그저 악몽일 것이라 생각했고 결국 콜로니에 남겠다고 말한 후 그대로 플레이어가 되었다.</p>
+                <p>스쿠나를 찾으며 포인트를 모으던 카시모와 만나게 되었고 임기응변으로 스쿠나를 안다며 거짓말을 쳐 그에게서 살아 남았다. 카시모가 스쿠나를 찾기 위한 열쇠와 같은 존재로 치부하며 데리고 다녔지만 그 마저도 머지않아 들키게 된다.</p>
+                <p>다행스럽게도 그의 변덕으로 인해 곁에 남기만 하고 죽임을 당하진 않았다.</p>
+                <p>사멸회유 후반, 카시모가 신주쿠 결전을 위해 떠나며 사멸회유가 끝나는 틈을 타 일상으로 돌아가라 말 하곤 요코는 콜로니 안에, 카시모는 신주쿠로 떠나게 된다.</p>
+                <br>
+            </div>
+        </div>
+
+        <h3 id="sec-3-2">3.2. 인외마경 신주쿠 결전</h3>
+        <div class="folding-box">
+            <div class="folding-header" onclick="toggleFolding('fold-history-2')">[스포일러 주의] 펼치기 · 접기</div>
+            <div class="folding-content" id="fold-history-2">
+                <p>남은 플레이어들을 사냥하던 켄자쿠와 마주치고 긴 파이프에 관통상을 입으며 과다 출혈로 사망한다.<span class="footnote" onclick="showPopup(event, '향년 20세')">[3]</span></p>
+            </div>
+        </div>
+
+        <h2 id="sec-4">4. 기타</h2>
+        <ul class="etc-items">
+            <li>사멸회유에 본인도 모르게 참가하게 되었다. 정신 차려보니 이미 한참 진행 중이던 콜로니에 플레이어로 남아 있었고 아무것도 모른 채 일을 하러 외출했을 때 카시모와 마주치게 된 것.</li>
+            <li>머리카락 색은 원래 그런 것이 아니라 도쿄에서 새 출발을 하는 기념으로 물들인 것이다. 그녀 치고는 과감한 도전인 셈.</li>
+            <li>남동생 둘과 편찮으신 아버지가 계신다. 어머니는 병으로 돌아가신지 오래. 아버지가 아프시고 동생들은 어리니 장녀인 요코 본인이 집안을 먹여 살려야 할 수 밖에 없었다.</li>
+            <li>코가네는 눈썹이 짙고 주근깨에 하트모양 꼬리가 특징.</li>
+            <li>가장 잘 접는 것은 학이다. 종이 학을 앉은 자리에서 몇 시간동안 질리지도 않고 계속 접을 수 있을 정도로</li>
+        </ul>
+
+        <h2 id="sec-5">5. 둘러보기</h2>
+        <div class="loop-box">
+            <ul class="loop-list">
+                <li><span class="loop-num">[1]</span> 향년</li>
+                <li><span class="loop-num">[2]</span> 이와테 현</li>
+                <li><span class="loop-num">[3]</span> 향년 20세</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="popup" class="footnote-popup"></div>
+
+<script>
+    function toggleFrameBody() {
+        var body = document.getElementById("frame-body");
+        if (!body.style.display || body.style.display === "none") {
+            body.style.display = "block";
+        } else {
+            body.style.display = "none";
+        }
+    }
+
+    function toggleFolding(id) {
+        var content = document.getElementById(id);
+        
+        if (content.classList.contains('open-active')) {
+            content.style.display = "none";
+            content.classList.remove('open-active');
+        } else {
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    }
+
+    function showPopup(event, text) {
+        event.stopPropagation(); 
+        var popup = document.getElementById("popup");
+        popup.innerText = text;
+        popup.style.display = "block";
+        popup.style.left = (event.pageX + 10) + "px";
+        popup.style.top = (event.pageY + 10) + "px";
+    }
+    document.addEventListener("click", function() {
+        document.getElementById("popup").style.display = "none";
+    });
+</script>
+
+</body>
+</html>
