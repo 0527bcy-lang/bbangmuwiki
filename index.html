@@ -162,10 +162,10 @@
             display: block;
             margin: 0 auto;
         }
-        /* 프로필 인포 속성 칸 테두리 색(#CD5C5C)과 통일 */
+        /* [수정] 본명, 성별, 출신 등 왼쪽 속성 칸을 테두리 배경색(#CD5C5C)과 글자색(흰색)으로 변경 */
         .infobox .attr-name {
-            background-color: #CD5C5C;
-            color: #ffffff;
+            background-color: #CD5C5C !important;
+            color: #ffffff !important;
             font-weight: bold;
             width: 30%;
             text-align: center;
@@ -220,12 +220,12 @@
         }
         .folding-content {
             padding: 12px;
-            display: none;
+            display: none; /* 기본은 닫힘 */
             border-top: 1px solid #ccc;
             background: #ffffff;
         }
-        /* 외모와 성격은 기본적으로 펼쳐진 상태로 뜨게 하기 위한 스타일 설정 */
-        .folding-box.default-open .folding-content {
+        /* [수정] 기본적으로 열려있어야 하는 칸 전용 스타일 */
+        .folding-content.open-active {
             display: block;
         }
 
@@ -288,7 +288,7 @@
 
             <div class="frame-colony-title">사쿠라지마 콜로니</div>
             <table class="frame-table">
-                <tr><th>플레이어</th><td><span class="txt-blue">다이도 하가네</span> · <span class="txt-blue">미요 로Ku주시</span></td></tr>
+                <tr><th>플레이어</th><td><span class="txt-blue">다이도 하가네</span> · <span class="txt-blue">미요 로쿠주시</span></td></tr>
                 <tr><th>신규 플레이어</th><td><span class="txt-red">카모 노리토시</span> · <span class="txt-neutral">스포일러</span></td></tr>
                 <tr><th>기타</th><td><span class="txt-red">젠인 마키</span></td></tr>
             </table>
@@ -352,17 +352,17 @@
         <h2 id="sec-2">2. 특징</h2>
         
         <h3 id="sec-2-1">2.1. 외모</h3>
-        <div class="folding-box default-open">
+        <div class="folding-box">
             <div class="folding-header" onclick="toggleFolding('fold-appearance')">[ 펼치기 · 접기 ]</div>
-            <div class="folding-content" id="fold-appearance">
+            <div class="folding-content open-active" id="fold-appearance">
                 <p>수수한 차림으로 다니곤 한다. 붉은 머리에 눈물점과 턱 및 점, 주근깨가 특징. 눈매가 둥글며 검은 스웨터에 흰색 롱 스커트와 머플러를 두르고 앞머리에 삔을 꽂고 있다. 체구는 작은 편이며 꽁꽁 싸매고 다니는 편.</p>
             </div>
         </div>
         
         <h3 id="sec-2-2">2.2. 성격</h3>
-        <div class="folding-box default-open">
+        <div class="folding-box">
             <div class="folding-header" onclick="toggleFolding('fold-personality')">[ 펼치기 · 접기 ]</div>
-            <div class="folding-content" id="fold-personality">
+            <div class="folding-content open-active" id="fold-personality">
                 <p>내성적이고, 매사에 소극적이며 잘 나서질 않는다. 하지만 가족이나 생계에 관련한 일이라면 본인이 제일 먼저 나서는 편.</p>
                 <p>성격 탓 인지 마음의 응어리를 속으로 삭히고 겉으로 티 내는 일이 없다. 소녀 가장으로서 군말 없이 생계를 부양하던 습관 때문인 지 타인이 시키는 일에도 대부분 거절 없이 수용하고 그대로 따른다.</p>
                 <p>덤벙거리고 표정으로 속 마음이 훤히 보인다. 거짓말도 못 하는 편.</p>
@@ -410,11 +410,20 @@
         body.style.display = (body.style.display === "none") ? "block" : "none";
     }
 
+    /* [수정] 열림 상태 클래스(open-active) 유무까지 판별하여 정확히 작동하도록 보완 */
     function toggleFolding(id) {
         var content = document.getElementById(id);
-        // 기본 상태가 열려있을 수도 있으므로 현재 연산된 스타일에 맞춰 확실하게 토글되도록 처리
-        var currentDisplay = window.getComputedStyle(content).display;
-        content.style.display = (currentDisplay === "block") ? "none" : "block";
+        
+        if (content.classList.contains('open-active')) {
+            content.style.display = "none";
+            content.classList.remove('open-active');
+        } else {
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
     }
 
     function showPopup(event, text) {
